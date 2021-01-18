@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Template</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Create two columns/boxes that floats next to each other */
+nav {
+  float: left;
+  width: 30%;
+  height: 300px; /* only for demonstration, should be removed */
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+article {
+  float: left;
+  padding: 20px;
+  width: 70%;
+  background-color: #f1f1f1;
+  height: 300px; /* only for demonstration, should be removed */
+}
+
+/* Clear floats after the columns */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+  background-color: #1000;
+
+}
+
+/* Style the footer */
+footer {
+  background-color: pink;
+  padding: 600px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+@media (max-width: 60px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+    <a href="https://image.noelshack.com/fichiers/2021/03/1/1610943293-139751196-683528448955059-408225861465600426-n-1.jpg"><img src="https://image.noelshack.com/minis/2021/03/1/1610943293-139751196-683528448955059-408225861465600426-n-1.png" border="0" alt="1610943293-139751196-683528448955059-408225861465600426-n-1.jpg - envoi d'image avec NoelShack" title="1610943293-139751196-683528448955059-408225861465600426-n-1.jpg"/></a><h2>DUDE COSMETICS</h2>
+</header>
+<link rel="stylesheet" type="text/css" href="css/styles.css" />
+<section>
+  <nav>
+    <h1><span>&#9776;</span></h1>
+    <div id="main">
+    <ul id="navigationMenu">
+  <span>&#9750;</span><li><a class="accueil" href="#"><span>Accueil</span></a></li>
+  <span>&#9751;</span><li><a class="INSTAGRAM" href="https://www.instagram.com/dudecosmetics/"><span>INSTAGRAM</span></a></li>
+  <span>&#9993;</span><li><a class="EMAIL" href="mailto:smithdona003@gmail.com.com"><span>EMAIL</span></a><br></li>
+  <span>&#9742;</span><li><a class="contact" href="tel:+15148383274"><span>CONTACTE</span></a><br></li>
+  
+  <h1>HORAIRE</h1>
+  <img src="https://www.ville.cowansville.qc.ca/webconcepteurcontent63/000024400000/upload/horaire-fr-300x186.jpg">
+ <h1>Veuillez choisir une heure de rendez-vous :</h1>
+ <form>
+  <div>
+    <label for="appt-time"></label>
+    <input id="appt-time" type="time" name="appt-time"
+           min="7:00" max="14:00" required>
+    <span class="validity"></span>
+  </div>
+  <div>
+      <input type="submit" value="Envoyer le formulaire">
+  </div>
+</form>
+
+<h1>OPTIONS DE LIVRAISON</h1>
+<form id=paiement>
+  <fieldset>
+    <legend>Votre identité</legend>
+
+    <ol>
+      <li>
+        <label for=nom>Nom</label>
+        <input id=nom name=nom type=text placeholder="Prénom et nom" required autofocus>
+      </li>
+      <li>
+        <label for=email>Email</label>
+        <input id=email name=email type=email placeholder="exemple@domaine.com" required>
+      </li>
+      <li>
+        <label for=telephone>Téléphone</label>
+        <input id=telephone name=telephone type=tel placeholder="par ex&nbsp;: +15148000000" required>
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset>
+    <legend>Adresse de livraison</legend>
+      <ol>
+        <li>
+          <label for=adresse>Adresse</label>
+          <textarea id=adresse name=adresse rows=5 required></textarea>
+        </li>
+        <li>
+          <label for=codepostal>Code postal</label>
+          <input id=codepostal name=codepostal type=text required>
+        </li>
+          <li>
+          <label for=pays>Pays</label>
+          <input id=pays name=pays type=text required>
+        </li>
+      </ol>
+    </fieldset>
+  <fieldset>
+    <legend>Informations CB</legend>
+    <ol>
+      <li>
+        <fieldset>
+          <legend>Type de carte bancaire</legend>
+          <ol>
+            <li>
+              <input id=visa name=type_de_carte type=radio>
+              <label for=visa>VISA</label>
+            </li>
+            <li>
+              <input id=amex name=type_de_carte type=radio>
+              <label for=amex>AmEx</label>
+            </li>
+            <li>
+              <input id=mastercard name=type_de_carte type=radio>
+              <label for=mastercard>Mastercard</label>
+            </li>
+          </ol>
+        </fieldset>
+      </li>
+      <li>
+        <label for=numero_de_carte>NÂ° de carte</label>
+        <input id=numero_de_carte name=numero_de_carte type=number required>
+      </li>
+      <li>
+        <label for=securite>Code sécurité</label>
+        <input id=securite name=securite type=number required>
+      </li>
+      <li>
+        <label for=nom_porteur>Nom du porteur</label>
+        <input id=nom_porteur name=nom_porteur type=text placeholder="Même nom que sur la carte" required>
+      </li>
+    </ol>
+  </fieldset>
+
+  <fieldset>
+    <button type=submit>J'achète !</button>
+  </fieldset>
+</form>
+<h2>CEO DUDECOSMETICS</h2>
+<img src="data:image/jpeg;base64,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">
+
+<P><HR NOSHADE></P>
+
+    </ul>
+    </div>
+  </nav>
+  <h1>PRODUITS POUR TOUS LES DIFFERENTES TYPES DE COULEUR DE PEAU</h1>
+  <article>
+    <h1>dudecosmetics</h1>
+  
+    <p>Bonjour dude cosmetics vous propose des produits de beauté pour femmes comme du rouge a lèvre; lipgloss.Nous vous proposons aussi des perruques et des bijoux.</p>
+     
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSY0pzRpFtvR6vnY7ESFe_P0Jdwvzy2r9KrQ&usqp=CAU"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4uv6pbbkRNFA5c83-bQE6ELkAxYAXvM8BmQ&usqp=CAU"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgyyS1yh6BRDcAQZBMeeGB3vMqj9l5vFNgGQ&usqp=CAU"><p>Vous ne savez pas quelle nuance complète votre teint ? Rencontrez mes rouges à lèvres  Créé en utilisant des pigments spécialement sélectionnés et fonctionne parfaitement sur 50 tons de peau divers, le rouge à lèvres Color Sensational Made For All dispose de nuances universelles de collection qui semblent sensationnelles sur tous.</p>
+    <img src="https://m.media-amazon.com/images/I/61dWcK1bnUL._AC_UL320_.jpg"><img src="https://m.media-amazon.com/images/I/61LTxqu1vmL._AC_UL320_.jpg"><img src="https://m.media-amazon.com/images/I/61raD8ZmUGL._AC_UL320_.jpg"><p>Fibre synthétique résistante à la chaleur.
+Casquette de base, également appelée Capless (bouchon fait à la machine)
+Ressemble à de vrais cheveux.
+Sangle réglable à l'intérieur du bonnet pour un ajustement parfait.
+La couleur de l’article peut varier de celle de la photo, en fonction des paramètres d’affichage et de luminosité de votre ordinateur.</p>
+<h1>JE SUIS SITUE ET BASE A MONTREAL'(QC) CANADA</h1>
+<P><HR NOSHADE></P>
+ <div class="mapouter"><div class="gmap_canvas"><iframe width="900" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=montreal&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2torrentz.net">torrentz</a><br><style>.mapouter{position:relative;text-align:right;height:400px;width:800px;}</style><a href="https://www.embedgooglemap.net">google maps embed link</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:800px;}</style></div></div> 
+ 
+
+
+<P><HR NOSHADE></P>
+<p>copyrihth:donatien web</p>
+<HR ALIGN=CENTER WIDTH="100">
+  </article>
+</section>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
